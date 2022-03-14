@@ -1,0 +1,24 @@
+{
+  "name": "comp3005-database-proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevqzhang/COMP3005-Database-Proj.git"
+  },
+  "author": "kevin zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevqzhang/COMP3005-Database-Proj/issues"
+  },
+  "homepage": "https://github.com/kevqzhang/COMP3005-Database-Proj#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "pug": "^3.0.2"
+  }
+}
