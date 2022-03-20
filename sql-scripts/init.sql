@@ -1,72 +1,64 @@
 insert into spells values (
-    'Thaumaturgy',
-    'Cantrip',
+    'Blink',
+    '3rd Level',
     'Transmutation',
-    '30 ft',
-    '1 action',
-    'V'
-);
-insert into spells values (
-    'Frostbite',
-    'Cantrip',
-    'Evocation',
-    '60 ft',
-    '1 action',
-    'V, S'
-);
-insert into spells values (
-    'Friends',
-    'Cantrip',
-    'Enchantment',
     'Self',
     '1 action',
-    'S, M'
-);
-insert into spells values (
-    'Gust',
-    'Cantrip',
-    'Transmutation',
-    '30 ft',
-    '1 action',
     'V, S'
 );
 insert into spells values (
-    'Light',
-    'Cantrip',
-    'Conjuration',
-    'Touch',
-    '1 action',
-    'V, M'
-);
-insert into spells values (
-    'Mending',
-    'Cantrip',
-    'Transmutation',
-    'Touch',
-    '1 action',
+    'Clairvoyance',
+    '3rd Level',
+    'Divination',
+    '1 mile',
+    '10 minutes',
     'V, S, M'
 );
 insert into spells values (
-    'Prestidigitation',
-    'Cantrip',
-    'Transmutation',
-    '10 ft',
-    '1 action',
-    'V, S'
-);
-insert into spells values (
-    'Thunderclap',
-    'Cantrip',
-    'Transmutation',
-    '5 ft',
-    '1 action',
+    'Counterspell',
+    '3rd Level',
+    'Abjuration',
+    '60 ft',
+    '1 reaction',
     'S'
 );
 insert into spells values (
-    'Resistance',
-    'Cantrip',
-    'Abjuration',
+    'Fear',
+    '3rd Level',
+    'Illusion',
+    'Self (30 ft cone)',
+    '1 action',
+    'V, S, M'
+);
+insert into spells values (
+    'Fireball',
+    '3rd Level',
+    'Evocation',
+    '150 ft',
+    '1 action',
+    'V, S, M'
+);
+insert into spells values (
+    'Fly',
+    '3rd Level',
+    'Transmutation',
     'Touch',
     '1 action',
     'V, S, M'
+);
+insert into spells values (
+    'Revivify',
+    '3rd Level',
+    'Necromancy',
+    'Touch',
+    '1 action',
+    'V, S, M'
+);
+insert into spells values (
+    'Tongues',
+    '3rd Level',
+    'Divination',
+    'Touch',
+    '1 action',
+    'V, M'
 );
