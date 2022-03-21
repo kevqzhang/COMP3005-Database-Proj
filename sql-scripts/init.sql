@@ -1,64 +1,68 @@
-insert into spells values (
-    'Blink',
-    '3rd Level',
-    'Transmutation',
-    'Self',
-    '1 action',
-    'V, S'
+/*
+insert into characters (
+    name,
+    class,
+    subclass,
+    race,
+    alignment,
+    charLvl,
+    str,
+    dex,
+    con,
+    int,
+    wis,
+    cha,
+    maxHp,
+    wears
+) values (
+    'Tiphany',
+    'Barbarian',
+    'Ancestral Guardian',
+    'Dwarf',
+    'Neutral Good',
+    6,
+    14,
+    10,
+    16,
+    8,
+    9,
+    9,
+
+)
+*/
+
+insert into armor values (
+    'Padded',
+    'Light Armor',
+    '11 + Dex modifier',
+    8,
+    1
 );
-insert into spells values (
-    'Clairvoyance',
-    '3rd Level',
-    'Divination',
-    '1 mile',
-    '10 minutes',
-    'V, S, M'
+insert into armor values (
+    'Breastplate',
+    'Medium Armor',
+    '14 + Dex modifier(max 2)',
+    8,
+    0
 );
-insert into spells values (
-    'Counterspell',
-    '3rd Level',
-    'Abjuration',
-    '60 ft',
-    '1 reaction',
-    'S'
+insert into armor values (
+    'Hide',
+    'Medium Armor',
+    '11 + Dex modifier(max 2)',
+    12,
+    0
 );
-insert into spells values (
-    'Fear',
-    '3rd Level',
-    'Illusion',
-    'Self (30 ft cone)',
-    '1 action',
-    'V, S, M'
+insert into armor values (
+    'Splint',
+    'Heavy Armor',
+    '17',
+    60,
+    1
 );
-insert into spells values (
-    'Fireball',
-    '3rd Level',
-    'Evocation',
-    '150 ft',
-    '1 action',
-    'V, S, M'
-);
-insert into spells values (
-    'Fly',
-    '3rd Level',
-    'Transmutation',
-    'Touch',
-    '1 action',
-    'V, S, M'
-);
-insert into spells values (
-    'Revivify',
-    '3rd Level',
-    'Necromancy',
-    'Touch',
-    '1 action',
-    'V, S, M'
-);
-insert into spells values (
-    'Tongues',
-    '3rd Level',
-    'Divination',
-    'Touch',
-    '1 action',
-    'V, M'
+insert into armor values (
+    'Plate',
+    'Heavy Armor',
+    '18',
+    65,
+    1
 );
