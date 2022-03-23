@@ -1,0 +1,8 @@
+html 
+    head
+        title Characters
+    body 
+        include ../navbar/navbar
+        .characters 
+            each char in characters
+                p #{char.name}
