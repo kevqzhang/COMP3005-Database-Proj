@@ -5,4 +5,5 @@ html
         include ../navbar/navbar
         .characters 
             each char in characters
-                p #{char.name}
+                .character 
+                    a(href="/") #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}

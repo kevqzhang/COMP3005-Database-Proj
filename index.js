@@ -9,12 +9,13 @@ let db = new sqlite3.Database("./dnd.db", (err) => {
     console.log("We're still gud!");
 });
 
+app.use(express.static(__dirname + "/pages"));
+app.set("View engine", "pug");
+app.set("views", "pages");
+
 app.get("/", (req, res) => {
     res.render("index.pug");
-});
-
-app.set("View engine", "pug");
-app.set("views", "pages"); 
+}); 
 
 //characters
 let charactersRouter = require("./routers/characters-router");

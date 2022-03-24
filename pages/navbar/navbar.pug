@@ -1,14 +1,9 @@
 nav#navbar
     div#navigation
-        input(type="text" placeholder="Keyword")
-        ul
-            li#home 
-                a(href="/") HOME
-            li#char
-                a(href="/characters") Search Character 
-            li#people  
-                a(href="/") Search Weapon
-            li#users
-                a(href="/") Search Spell  
-            li#addMovie 
-                a(href="/") Search Armor
+        input#search(type="text" placeholder="Keyword")
+        button#home Home
+        button#char Search Character
+        button#wep Search Weapon
+        button#armor Search Armor
+
+    script(src="./navbar/navbar.js")

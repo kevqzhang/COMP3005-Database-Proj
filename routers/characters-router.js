@@ -12,9 +12,11 @@ let db = new sqlite3.Database("./dnd.db", (err) => {
 router.get("/", loadCharacters, sendCharacters);
 
 function loadCharacters(req, res, next) {
-    db.all('SELECT * FROM characters', [], (err, rows) => {
+    let search;
+    if (!req.query.search) search = "";
+    else search = req.query.search;
+    db.all('SELECT * FROM characters WHERE name LIKE ?', ["%" + search + "%"], (err, rows) => {
         if(err) { throw err }
-        console.log(rows);
         res.characters = rows;
         next();
     });
