@@ -1,4 +1,5 @@
 const express = require("express");
+const res = require("express/lib/response");
 let router = express.Router();
 
 const sqlite3 = require("sqlite3").verbose();
@@ -6,10 +7,10 @@ let db = new sqlite3.Database("./dnd.db", (err) => {
     if (err) {
         console.log(err.message);
     }
-    console.log("We're still gud!");
 });
 
 router.get("/", loadCharacters, sendCharacters);
+router.get("/:cid", loadCharacter, sendCharacter);
 
 function loadCharacters(req, res, next) {
     let search;
@@ -24,8 +25,25 @@ function loadCharacters(req, res, next) {
 
 function sendCharacters(req, res, next) {
     res.format({
-        "text/html": () => {res.status(200).render("./view-characters/view-characters.pug", {characters: res.characters})},
+        "text/html": () => {res.status(200).render("view-characters.pug", {characters: res.characters})},
         "application/json": () => {res.status(200).json(res.characters)}
+    }); 
+}
+
+function loadCharacter(req, res, next) {
+    let cid = req.params.cid;
+    db.get('SELECT * FROM characters WHERE cid = ?', [cid], (err, row) => {
+        if(err) { throw err }
+        console.log(row);
+        res.character = row;
+        next()
+    });
+}
+
+function sendCharacter(req, res, next) {
+    res.format({
+        "text/html": () => {res.status(200).render("view-character.pug", {char: res.character})},
+        "application/json": () => {res.status(200).json(res.character)}
     }); 
 }
 

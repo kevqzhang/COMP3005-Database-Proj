@@ -1,0 +1,9 @@
+html 
+    head
+        title Characters
+    body 
+        include navbar
+        .characters 
+            each char in characters
+                .character 
+                    a(href="/characters/" + char.cid) #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}

@@ -9,7 +9,7 @@ let db = new sqlite3.Database("./dnd.db", (err) => {
     console.log("We're still gud!");
 });
 
-app.use(express.static(__dirname + "/pages"));
+app.use(express.static(__dirname + "/public"));
 app.set("View engine", "pug");
 app.set("views", "pages");
 

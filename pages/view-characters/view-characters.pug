@@ -1,9 +1,0 @@
-html 
-    head
-        title Characters
-    body 
-        include ../navbar/navbar
-        .characters 
-            each char in characters
-                .character 
-                    a(href="/") #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}
