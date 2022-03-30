@@ -3,14 +3,28 @@ html
         title #{char.name}
     body 
         include navbar
-        p #{char.name}
-        p #{"Level " + char.charLvl + " " + char.subclass + " " + char.class}
-        p #{"Race: " + char.race}
-        p #{"Alignment: " + char.alignment}
-        p #{"Max HP: " + char.maxHp}
-        p #{"STR: " + char.str}
-        p #{"DEX: " + char.dex}
-        p #{"CON: " + char.con}
-        p #{"INT: " + char.int}
-        p #{"WIS: " + char.wis}
-        p #{"CHA: " + char.cha}
+        .character
+            p #{char.name}
+            p #{"Level " + char.charLvl + " " + char.subclass + " " + char.class}
+            p #{"Race: " + char.race}
+            p #{"Alignment: " + char.alignment}
+            p #{"Max HP: " + char.maxHp}
+            if !char.wears
+                p #{"Armor: Unarmored"}
+            else 
+                p #{"Armor: " + char.wears}
+            p #{"STR: " + char.str}
+            p #{"DEX: " + char.dex}
+            p #{"CON: " + char.con}
+            p #{"INT: " + char.int}
+            p #{"WIS: " + char.wis}
+            p #{"CHA: " + char.cha}
+        .wields 
+            h Wields:
+            each weapon in weapons
+                .weapon 
+                    if weapon.proficiency == 1
+                        a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Proficient"} 
+                    else 
+                        a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Not Proficient"}
+

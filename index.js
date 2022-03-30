@@ -21,5 +21,9 @@ app.get("/", (req, res) => {
 let charactersRouter = require("./routers/characters-router");
 app.use("/characters", charactersRouter);
 
+//characters
+let weaponsRouter = require("./routers/weapons-router");
+app.use("/weapons", weaponsRouter);
+
 app.listen(3000);
 console.log("Listening at http://localhost:3000");

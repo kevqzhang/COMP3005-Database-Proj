@@ -34,15 +34,18 @@ function loadCharacter(req, res, next) {
     let cid = req.params.cid;
     db.get('SELECT * FROM characters WHERE cid = ?', [cid], (err, row) => {
         if(err) { throw err }
-        console.log(row);
         res.character = row;
-        next()
+        db.all('SELECT * FROM wields WHERE cid = ?', [cid], (err, row2) => {
+            if(err) { throw err }
+            res.weapons = row2;
+            next()
+        });
     });
 }
 
 function sendCharacter(req, res, next) {
     res.format({
-        "text/html": () => {res.status(200).render("view-character.pug", {char: res.character})},
+        "text/html": () => {res.status(200).render("view-character.pug", {char: res.character, weapons: res.weapons})},
         "application/json": () => {res.status(200).json(res.character)}
     }); 
 }

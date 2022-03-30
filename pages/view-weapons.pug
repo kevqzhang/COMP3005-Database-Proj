@@ -1,0 +1,15 @@
+html 
+    head
+        title Weapons
+    body 
+        include navbar
+        h Characters: 
+        .characters 
+            each char in characters
+                .character 
+                    a(href="/characters/" + char.cid) #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}
+        h Weapons: 
+        .weapons 
+            each weapon in weapons
+                .weapon 
+                    a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName}
