@@ -10,6 +10,7 @@ let db = new sqlite3.Database("./dnd.db", (err) => {
 });
 
 router.get("/", loadWeapons, sendWeapons);
+router.get("/:id", loadWeapon, sendWeapon);
 
 function loadWeapons(req, res, next) {
     let search;
@@ -33,5 +34,22 @@ function sendWeapons(req, res, next) {
         "application/json": () => {res.status(200).json(res.weapons)}
     }); 
 }
+
+function loadWeapon(req, res, next) {
+    let id = req.params.id;
+    db.get('SELECT * FROM weapons WHERE weaponName = ?', [id], (err, row) => {
+        if(err) { throw err }
+        res.weapon = row;
+        next();
+    });
+}
+
+function sendWeapon(req, res, next) {
+    res.format({
+        "text/html": () => {res.status(200).render("view-weapon.pug", {weapon: res.weapon})},
+        "application/json": () => {res.status(200).json(res.weapon)}
+    }); 
+}
+
 
 module.exports = router;

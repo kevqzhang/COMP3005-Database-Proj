@@ -1,0 +1,10 @@
+html 
+    head
+        title #{weapon.weaponName}
+    body 
+        include navbar
+        .weapon
+            p #{weapon.weaponName + " - " + weapon.weaponType}
+            p #{weapon.damage + " " + weapon.damageType + " damage"}
+            p #{weapon.wepWeight + " lbs"}
+            p #{weapon.properties}
