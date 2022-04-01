@@ -1,0 +1,11 @@
+html 
+    head
+        title #{armor.armorName}
+    body 
+        include navbar
+        .armor
+            p #{armor.armorName + " - " + armor.armorType}
+            p #{"AC " + armor.ac}
+            p #{armor.armWeight + " lbs"}
+            if armor.stealth == 1
+                p Disadvantage on Stealth

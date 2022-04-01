@@ -11,3 +11,8 @@ document.getElementById("wep").onclick = function () {
     let search = document.getElementById("search").value;
     window.location.href = "http://localhost:3000/weapons?search=" + search;
 }
+
+document.getElementById("armor").onclick = function () {
+    let search = document.getElementById("search").value;
+    window.location.href = "http://localhost:3000/armor?search=" + search;
+}

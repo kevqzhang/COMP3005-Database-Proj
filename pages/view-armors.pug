@@ -1,0 +1,15 @@
+html 
+    head
+        title Armor
+    body 
+        include navbar
+        h Characters: 
+        .characters 
+            each char in characters
+                .character 
+                    a(href="/characters/" + char.cid) #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}
+        h Armor: 
+        .armor 
+            each arm in armors
+                .armor 
+                    a(href="/armor/" + arm.armorName) #{arm.armorName}
