@@ -38,14 +38,22 @@ function loadCharacter(req, res, next) {
         db.all('SELECT * FROM wields WHERE cid = ?', [cid], (err, row2) => {
             if(err) { throw err }
             res.weapons = row2;
-            next()
+            db.all('SELECT * FROM casts WHERE cid = ?', [cid], (err, row3) => {
+                if(err) { throw err }
+                res.spells = row3;
+                next();
+            });
         });
     });
 }
 
 function sendCharacter(req, res, next) {
     res.format({
-        "text/html": () => {res.status(200).render("view-character.pug", {char: res.character, weapons: res.weapons})},
+        "text/html": () => {res.status(200).render("view-character.pug", {
+            char: res.character, 
+            weapons: res.weapons, 
+            spells: res.spells
+        })},
         "application/json": () => {res.status(200).json(res.character)}
     }); 
 }

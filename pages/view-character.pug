@@ -27,4 +27,10 @@ html
                         a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Proficient"} 
                     else 
                         a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Not Proficient"}
+        .casts 
+            if spells.length != 0
+                h Casts 
+                each spell in spells 
+                    .spell 
+                        a(href="/spells/" + spell.spellName) #{spell.spellName + " - " + spell.spLvl}
 

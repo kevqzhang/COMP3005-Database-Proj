@@ -1,0 +1,15 @@
+html 
+    head
+        title Spells
+    body 
+        include navbar
+        h Characters: 
+        .characters 
+            each char in characters
+                .character 
+                    a(href="/characters/" + char.cid) #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}
+        h Spells: 
+        .spells 
+            each spell in spells
+                .spell 
+                    a(href="/spells/" + spell.spellName) #{spell.spellName + " - " + spell.spLvl}

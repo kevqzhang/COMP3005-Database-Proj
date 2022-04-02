@@ -16,3 +16,8 @@ document.getElementById("armor").onclick = function () {
     let search = document.getElementById("search").value;
     window.location.href = "http://localhost:3000/armor?search=" + search;
 }
+
+document.getElementById("spell").onclick = function () {
+    let search = document.getElementById("search").value;
+    window.location.href = "http://localhost:3000/spells?search=" + search;
+}

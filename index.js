@@ -29,5 +29,9 @@ app.use("/weapons", weaponsRouter);
 let armorRouter = require("./routers/armor-router");
 app.use("/armor", armorRouter);
 
+//spells
+let spellsRouter = require("./routers/spells-router");
+app.use("/spells", spellsRouter);
+
 app.listen(3000);
 console.log("Listening at http://localhost:3000");

@@ -1,0 +1,10 @@
+html 
+    head
+        title #{spell.spellName}
+    body 
+        include navbar
+        .spell
+            p #{spell.spellName + " - " + spell.spLvl}
+            p #{spell.school}
+            p #{spell.range}
+            p #{spell.castTime}
