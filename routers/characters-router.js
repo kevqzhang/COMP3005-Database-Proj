@@ -38,7 +38,8 @@ function loadCharacter(req, res, next) {
         db.all('SELECT * FROM wields WHERE cid = ?', [cid], (err, row2) => {
             if(err) { throw err }
             res.weapons = row2;
-            db.all('SELECT * FROM casts WHERE cid = ?', [cid], (err, row3) => {
+            let script = "SELECT * FROM spells WHERE spellName in ( select spellName from casts where cid like ?)"
+            db.all(script, [cid], (err, row3) => {
                 if(err) { throw err }
                 res.spells = row3;
                 next();
