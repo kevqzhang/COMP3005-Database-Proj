@@ -1,0 +1,34 @@
+.content {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    margin-right: -50%;
+    transform: translate(-35%, -10%);
+}
+
+.armor {
+    display: grid;
+    grid-template-areas:
+        'name name name name name name'
+        'ac ac ac w w w'
+        'stealth stealth stealth stealth stealth stealth'
+    ;
+    gap: 10px;
+}
+
+.name {
+    grid-area: name;
+}
+
+.ac {
+    grid-area: ac;
+}
+
+.weight {
+    grid-area: w;
+}
+
+.stealth {
+    grid-area: stealth;
+}

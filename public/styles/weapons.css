@@ -1,0 +1,11 @@
+.content {
+    margin: 0;
+    margin-top: 10px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -10%);
+    display: grid;
+    grid-template-columns: 75% 25%;
+}

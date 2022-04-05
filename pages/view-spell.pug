@@ -1,10 +1,14 @@
 html 
     head
         title #{spell.spellName}
+        style 
+            include ../public/styles/navbar.css
+            include ../public/styles/spell.css
     body 
         include navbar
-        .spell
-            p #{spell.spellName + " - " + spell.spLvl}
-            p #{spell.school}
-            p #{spell.range}
-            p #{spell.castTime}
+        .content
+            .spell
+                h2.name #{spell.spellName + " - " + spell.spLvl}
+                p.school #{spell.school}
+                p.range #{spell.range}
+                p.time #{spell.castTime}

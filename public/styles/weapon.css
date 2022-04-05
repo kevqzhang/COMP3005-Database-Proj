@@ -1,0 +1,33 @@
+.content {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    margin-right: -50%;
+    transform: translate(-35%, -10%);
+}
+
+.weapon {
+    display: grid;
+    grid-template-areas:
+        'name name name name name name'
+        'damage damage damage w w w'
+        'prop prop prop prop prop prop'
+    ;
+}
+
+.name {
+    grid-area: name;
+}
+
+.damage {
+    grid-area: damage;
+}
+
+.weight {
+    grid-area: w;
+}
+
+.prop {
+    grid-area: prop;
+}

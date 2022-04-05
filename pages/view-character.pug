@@ -1,36 +1,40 @@
 html 
     head
         title #{char.name}
+        style 
+            include ../public/styles/navbar.css
+            include ../public/styles/character.css
     body 
         include navbar
-        .character
-            p #{char.name}
-            p #{"Level " + char.charLvl + " " + char.subclass + " " + char.class}
-            p #{"Race: " + char.race}
-            p #{"Alignment: " + char.alignment}
-            p #{"Max HP: " + char.maxHp}
-            if !char.wears
-                p #{"Armor: Unarmored"}
-            else 
-                p #{"Armor: " + char.wears}
-            p #{"STR: " + char.str}
-            p #{"DEX: " + char.dex}
-            p #{"CON: " + char.con}
-            p #{"INT: " + char.int}
-            p #{"WIS: " + char.wis}
-            p #{"CHA: " + char.cha}
-        .wields 
-            h Wields:
-            each weapon in weapons
-                .weapon 
-                    if weapon.proficiency == 1
-                        a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Proficient"} 
-                    else 
-                        a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Not Proficient"}
-        .casts 
-            if spells.length != 0
-                h Casts 
-                each spell in spells 
-                    .spell 
-                        a(href="/spells/" + spell.spellName) #{spell.spellName + " - " + spell.spLvl}
+        .content
+            .character
+                h2.name #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}
+                h4.race #{"Race: " + char.race}
+                h4.align #{"Alignment: " + char.alignment}
+                h4.hp #{"Max HP: " + char.maxHp}
+                if !char.wears
+                    h4.armor #{"Armor: Unarmored"}
+                else 
+                    h4.armor #{"Armor: " + char.wears}
+                .stats
+                    h4 #{"STR: " + char.str}
+                    h4 #{"DEX: " + char.dex}
+                    h4 #{"CON: " + char.con}
+                    h4 #{"INT: " + char.int}
+                    h4 #{"WIS: " + char.wis}
+                    h4 #{"CHA: " + char.cha}
+            .wields 
+                h2 Wields:
+                each weapon in weapons
+                    .weapon 
+                        if weapon.proficiency == 1
+                            a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Proficient"} 
+                        else 
+                            a(href="/weapons/" + weapon.weaponName) #{weapon.weaponName + " - Not Proficient"}
+            .casts 
+                if spells.length != 0
+                    h2 Casts 
+                    each spell in spells 
+                        .spell 
+                            a(href="/spells/" + spell.spellName) #{spell.spellName + " - " + spell.spLvl}
 

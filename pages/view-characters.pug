@@ -1,10 +1,14 @@
 html 
     head
         title Characters
+        style 
+            include ../public/styles/navbar.css
+            include ../public/styles/characters.css
     body 
         include navbar
-        h Characters:
-        .characters 
-            each char in characters
-                .character 
-                    a(href="/characters/" + char.cid) #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}
+        .content
+            .characters 
+                h1 Characters:
+                each char in characters
+                    .character 
+                        a(href="/characters/" + char.cid) #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}

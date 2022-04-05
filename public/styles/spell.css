@@ -1,0 +1,33 @@
+.content {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    margin-right: -50%;
+    transform: translate(-35%, -10%);
+}
+
+.spell {
+    display: grid;
+    grid-template-areas:
+        'name name name name name name'
+        'school school school school school school'
+        'range range range time time time'
+    ;
+}
+
+.name {
+    grid-area: name;
+}
+
+.school {
+    grid-area: school;
+}
+
+.range {
+    grid-area: range;
+}
+
+.time {
+    grid-area: time;
+}

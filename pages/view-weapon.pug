@@ -1,10 +1,14 @@
 html 
     head
         title #{weapon.weaponName}
+        style 
+            include ../public/styles/navbar.css
+            include ../public/styles/weapon.css
     body 
         include navbar
-        .weapon
-            p #{weapon.weaponName + " - " + weapon.weaponType}
-            p #{weapon.damage + " " + weapon.damageType + " damage"}
-            p #{weapon.wepWeight + " lbs"}
-            p #{weapon.properties}
+        .content
+            .weapon
+                h2.name #{weapon.weaponName + " - " + weapon.weaponType}
+                p.damage #{weapon.damage + " " + weapon.damageType + " damage"}
+                p.weight #{weapon.wepWeight + " lbs"}
+                p.prop #{weapon.properties}

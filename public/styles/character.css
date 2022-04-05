@@ -1,0 +1,44 @@
+.content {
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    margin-right: -50%;
+    transform: translate(-35%, -20%);
+    display: grid;
+    grid-template-columns: 90% 30% 30%;
+}
+
+.name {
+    grid-area: name;
+}
+
+.race {
+    grid-area: race;
+}
+
+.align {
+    grid-area: align;
+}
+
+.hp {
+    grid-area: hp;
+}
+
+.armor {
+    grid-area: armor;
+}
+
+.stats {
+    grid-area: stats;
+}
+
+.character {
+    display: grid;
+    grid-template-areas: 
+        'name name name name name name'
+        'race race race align align align'
+        'hp hp hp armor armor armor'
+        'stats stats stats stats stats stats'
+    ;
+}
