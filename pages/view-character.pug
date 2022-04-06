@@ -9,20 +9,22 @@ html
         .content
             .character
                 h2.name #{char.name + " - Level " + char.charLvl + " " + char.subclass + " " + char.class}
-                h4.race #{"Race: " + char.race}
-                h4.align #{"Alignment: " + char.alignment}
-                h4.hp #{"Max HP: " + char.maxHp}
+                p.race #{"Race: " + char.race}
+                p.align #{"Alignment: " + char.alignment}
+                p.hp #{"Max HP: " + char.maxHp}
                 if !char.wears
-                    h4.armor #{"Armor: Unarmored"}
+                    p.armor #{"Armor: Unarmored"}
                 else 
-                    h4.armor #{"Armor: " + char.wears}
+                    .armor
+                        span Armor: 
+                        a(href="/armor/" + char.wears) #{char.wears}
                 .stats
-                    h4 #{"STR: " + char.str}
-                    h4 #{"DEX: " + char.dex}
-                    h4 #{"CON: " + char.con}
-                    h4 #{"INT: " + char.int}
-                    h4 #{"WIS: " + char.wis}
-                    h4 #{"CHA: " + char.cha}
+                    p #{"STR: " + char.str}
+                    p #{"DEX: " + char.dex}
+                    p #{"CON: " + char.con}
+                    p #{"INT: " + char.int}
+                    p #{"WIS: " + char.wis}
+                    p #{"CHA: " + char.cha}
             .wields 
                 h2 Wields:
                 each weapon in weapons
