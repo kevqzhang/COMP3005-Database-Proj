@@ -10,6 +10,6 @@ html
             .armor
                 h2.name #{armor.armorName + " - " + armor.armorType}
                 p.ac #{"AC " + armor.ac}
-                p.weight #{armor.armWeight + " lbs"}
+                p.weight #{"Weight: " + armor.armWeight + " lbs"}
                 if armor.stealth == 1
-                    p.stealth Disadvantage on Stealth
+                    p.stealth Disadvantage on Stealth Checks
